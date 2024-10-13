@@ -1,0 +1,14 @@
+{{template "base" .}}
+
+{{define "title"}}Fantasy Team #{{.FantasyTeam.Id}}{{end}}
+
+{{define "main"}}
+  {{with .FantasyTeam}}
+    <div class='fantasyteam'>
+      <div class='metadata'>
+        <strong>{{.Name}}</strong>
+        <span>#{{.Id}}</span>
+      </div>
+    </div>
+  {{end}}
+{{end}}

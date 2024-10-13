@@ -1,0 +1,23 @@
+{{template "base" .}}
+
+{{define "title"}}Players{{end}}
+
+{{define "main"}}
+  <h2>Players</h2>
+  {{if .Players}}
+    <table>
+      <tr>
+        <th>Name</th>
+        <th>Id</th>
+      </tr>
+      {{range .Players}}
+        <tr>
+          <td><a href="/players/{{.Id}}">{{.Name}}</a></td>
+          <td>#{{.Id}}</td>
+        </tr>
+      {{end}}
+    </table>
+  {{else}}
+    <p>No players yet!</p>
+  {{end}}
+{{end}}

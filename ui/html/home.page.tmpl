@@ -1,0 +1,23 @@
+{{template "base" .}}
+
+{{define "title"}}Home{{end}}
+
+{{define "main"}}
+  <h2>Fantasy Teams</h2>
+  {{if .FantasyTeams}}
+    <table>
+      <tr>
+        <th>Name</th>
+        <th>Id</th>
+      </tr>
+      {{range .FantasyTeams}}
+        <tr>
+          <td><a href="/fantasyteams/{{.Id}}">{{.Name}}</a></td>
+          <td>#{{.Id}}</td>
+        </tr>
+      {{end}}
+    </table>
+  {{else}}
+    <p>No fantasy teams yet!</p>
+  {{end}}
+{{end}}

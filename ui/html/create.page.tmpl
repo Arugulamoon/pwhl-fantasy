@@ -1,0 +1,21 @@
+{{template "base" .}}
+
+{{define "title"}}Create a New Fantasy Team{{end}}
+
+{{define "main"}}
+  <form action='/fantasyteams' method='POST'>
+    <input type='hidden' name='csrf_token' value='{{.CSRFToken}}'>
+    {{with .Form}}
+      <div>
+        <label>Name:</label>
+        {{with .Errors.Get "name"}}
+          <label class='error'>{{.}}</label>
+        {{end}}
+        <input type='text' name='name' value='{{.Get "name"}}'>
+      </div>
+      <div>
+        <input type='submit' value='Create'>
+      </div>
+    {{end}}
+  </form>
+{{end}}

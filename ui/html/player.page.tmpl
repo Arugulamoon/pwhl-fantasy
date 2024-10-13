@@ -1,0 +1,14 @@
+{{template "base" .}}
+
+{{define "title"}}Player #{{.Player.Id}}{{end}}
+
+{{define "main"}}
+  {{with .Player}}
+    <div class='player'>
+      <div class='metadata'>
+        <strong>{{.Name}}</strong>
+        <span>#{{.Id}}</span>
+      </div>
+    </div>
+  {{end}}
+{{end}}
