@@ -13,8 +13,9 @@ func (m *FantasyTeamModel) GetAll() ([]*models.FantasyTeam, error) {
 func (m *FantasyTeamModel) Insert(name string) (int, error) {
 	id := len(m.FantasyTeams) + 1
 	m.FantasyTeams = append(m.FantasyTeams, &models.FantasyTeam{
-		Id:   id,
-		Name: name,
+		Id:      id,
+		Name:    name,
+		Players: make([]*models.FantasyTeamPlayer, 0),
 	})
 	return id, nil
 }
