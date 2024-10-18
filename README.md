@@ -27,7 +27,7 @@ go test ./...
 ```
 
 ## Run
-### On Linux/Mac
+### On Linux/Mac/Windows Git Bash
 ```
 go run ./cmd/web
 ```
